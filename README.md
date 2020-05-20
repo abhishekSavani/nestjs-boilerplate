@@ -6,7 +6,7 @@
 [travis-url]: https://travis-ci.org/nestjs/nest
 [linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
 [linux-url]: https://travis-ci.org/nestjs/nest
-  
+
   <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
     <p align="center">
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
@@ -72,4 +72,85 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-  Nest is [MIT licensed](LICENSE).
+Nest is [MIT licensed](LICENSE).
+
+# Commands
+
+- create nest module: nest g module module_name
+- create controller: nest g controller controller_name --no-spec
+- create service: nest g service controller_name --no-spec
+
+- Update Nest dependancy (nest version 6 To nest version 7) :
+  nest update -f -t latest
+
+# Notes
+
+when create new module
+
+- create module.
+- create controller.
+- create service.
+
+- create entity: one kind of database model.
+- create repository : for write complex business logic and use in service.
+
+# Packages
+
+class-validator :
+
+- its use in validate DTO.
+- DTO is just typescript class is use for define structure of Body, req, res .. etc.
+- in simple term you can use it for validate class.
+
+@nestjs/jwt :
+
+- nest js wrapper for JWT.
+
+@nestjs/passport:
+
+- nest js wrapper for passport middlewere.
+
+passport:
+
+- actual passport library.
+- manage auth strategy.
+
+passport-jwt:
+
+- manage swt auth strategy through passport.
+
+win-node-env:
+
+- manage configuration.
+- for window: for set node env.
+
+# DB Relationship
+
+one to many | both side
+many to one | both side
+
+- note: in this case write relation code in both entity model.
+
+---
+
+## example
+
+User model | task model [65]
+
+- UM have one-to-many relation with TM.
+- OneToMany().
+- one user have many task
+- when we access User that time we need Task for appropriate User.
+- this case we make { eager: true }
+
+- TM have many-to-one relation with UM.
+- ManyToOne().
+- many task have one user.
+- many task have one user.
+- when we access Task that time if we don't need User for appropriate Tasl.
+- this case we make { eager: false }
+
+## Notes
+
+- for more info. check -> notes.txt
+- for postman collection -> docs/NEST.postman_collection.json
