@@ -10,7 +10,14 @@
 
 ## Installation
 
+- install nestjs CLI globally.
+
 ```bash
+$ npm i -g @nestjs/cli
+```
+
+```bash
+
 $ npm install
 ```
 
@@ -87,7 +94,7 @@ passport:
 
 passport-jwt:
 
-- manage swt auth strategy through passport.
+- manage jwt auth strategy through passport.
 
 win-node-env:
 
